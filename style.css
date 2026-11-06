@@ -1,0 +1,75 @@
+html,body{height:100%;margin:0}body{background:#070711;overflow:hidden}
+/* ===== FELIX PORTFOLIO LANDING ===== */
+:root{--felix-green:#b6ff4a;--felix-purple:#9b5cff;--felix-bg:#070711;--felix-card:#111120}
+body{overflow:hidden}
+#portfolio{position:fixed;inset:0;z-index:300;background:var(--felix-bg);color:#f7f5ff;overflow:auto;font-family:Inter,system-ui,sans-serif;isolation:isolate}
+#portfolio *{box-sizing:border-box}
+#portfolio:before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background:radial-gradient(700px circle at var(--mx,50%) var(--my,30%),#9b5cff22,transparent 55%),radial-gradient(700px circle at 80% 80%,#b6ff4a12,transparent 60%),#070711}
+#portfolio:after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.14;background-image:linear-gradient(#ffffff0c 1px,transparent 1px),linear-gradient(90deg,#ffffff0c 1px,transparent 1px);background-size:54px 54px;mask-image:linear-gradient(to bottom,black,transparent 90%)}
+.f-nav{height:82px;display:flex;align-items:center;justify-content:space-between;max-width:1240px;margin:auto;padding:0 28px;position:sticky;top:0;z-index:5;backdrop-filter:blur(18px);background:#070711a8;border-bottom:1px solid #ffffff12}
+.f-brand{font-size:21px;font-weight:950;letter-spacing:-1px}.f-brand span{color:var(--felix-green)}.f-brand small{display:block;font-size:9px;letter-spacing:4px;color:#9c9bad;font-weight:600;margin-top:2px}
+.f-navlinks{display:flex;gap:28px;align-items:center}.f-navlinks a{color:#c7c4d7;text-decoration:none;font-size:13px;transition:.25s}.f-navlinks a:hover{color:var(--felix-green)}
+.f-actions{display:flex;gap:10px}.f-btn{border:1px solid #ffffff28;border-radius:999px;padding:12px 21px;color:white;background:#ffffff08;font-weight:750;font-size:12px;letter-spacing:.4px;cursor:pointer;transition:transform .25s,box-shadow .25s,border-color .25s}.f-btn:hover{transform:translateY(-3px);border-color:var(--felix-green);box-shadow:0 8px 30px #b6ff4a20}.f-btn.primary{border:0;color:#090910;background:linear-gradient(110deg,var(--felix-green),#75edb0 50%,#b58aff);box-shadow:0 8px 35px #9b5cff30}
+.f-hero{max-width:1240px;margin:auto;min-height:690px;padding:92px 28px 80px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:35px;position:relative}
+.f-eyebrow{display:inline-flex;gap:9px;align-items:center;border:1px solid #b6ff4a45;border-radius:99px;padding:8px 13px;color:#d6ff9a;font-size:10px;letter-spacing:2px;text-transform:uppercase;background:#b6ff4a0a}
+.f-dot{width:7px;height:7px;border-radius:50%;background:var(--felix-green);box-shadow:0 0 14px var(--felix-green);animation:fdot 1.5s infinite}
+@keyframes fdot{50%{opacity:.35;transform:scale(.65)}}
+.f-hero h1{font-size:clamp(56px,7.5vw,104px);line-height:.91;letter-spacing:-7px;margin:26px 0 22px;font-weight:950}
+.f-hero h1 .grad{background:linear-gradient(100deg,var(--felix-green),#85edc5 40%,#a77aff 78%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.f-lead{max-width:520px;color:#aaa8bc;font-size:16px;line-height:1.8}
+.f-herocta{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}.f-herocta .f-btn{padding:15px 25px}
+.f-stats{display:flex;gap:30px;margin-top:48px}.f-stat strong{display:block;font-size:23px;color:#fff}.f-stat span{font-size:10px;letter-spacing:1.5px;color:#77758d;text-transform:uppercase}
+.f-visual{height:510px;position:relative;display:grid;place-items:center;perspective:900px}
+.f-orbit{position:absolute;width:min(42vw,430px);aspect-ratio:1;border:1px solid #9b5cff55;border-radius:50%;box-shadow:0 0 65px #9b5cff16,inset 0 0 65px #b6ff4a0b;animation:orbit 22s linear infinite}
+.f-orbit:before,.f-orbit:after{content:"";position:absolute;width:11px;height:11px;border-radius:50%;background:var(--felix-green);box-shadow:0 0 25px 6px #b6ff4a88;top:15%;left:15%}
+.f-orbit:after{top:auto;left:auto;bottom:13%;right:16%;background:var(--felix-purple);box-shadow:0 0 25px 6px #9b5cff99}
+.f-orbit.o2{width:min(34vw,350px);border-color:#b6ff4a40;animation:orbit 16s linear infinite reverse}
+@keyframes orbit{to{transform:rotate(360deg)}}
+.f-glass{width:min(100%,470px);aspect-ratio:1.22;position:relative;display:grid;place-items:center;transform-style:preserve-3d;animation:float 5s ease-in-out infinite;filter:drop-shadow(0 30px 45px #000b)}
+@keyframes float{0%,100%{transform:translateY(0) rotateX(3deg) rotateY(-8deg)}50%{transform:translateY(-17px) rotateX(-3deg) rotateY(8deg)}}
+.f-lens{position:absolute;inset:17% 5%;border:2px solid #c9ff85;border-radius:38% 38% 32% 32% / 32% 32% 42% 42%;background:linear-gradient(145deg,#b6ff4a22,#9b5cff24 55%,#05050cdd);box-shadow:inset 0 0 35px #b6ff4a24,0 0 24px #b6ff4a55;transform:rotate(-5deg);overflow:hidden}
+.f-lens:before{content:"";position:absolute;inset:-60%;background:linear-gradient(110deg,transparent 42%,#ffffff25 48%,transparent 54%);animation:shine 5s ease-in-out infinite}
+@keyframes shine{0%,25%{transform:translateX(-40%) rotate(15deg)}75%,100%{transform:translateX(40%) rotate(15deg)}}
+.f-lens:after{content:"FELIX";position:absolute;inset:0;display:grid;place-items:center;font-size:clamp(44px,6vw,76px);font-weight:1000;letter-spacing:8px;color:#c5ff83;text-shadow:0 0 12px #b6ff4a,0 0 45px #9b5cff;transform:rotate(5deg)}
+.f-bridge{position:absolute;top:43%;left:43%;width:15%;height:13%;border-top:4px solid #d5ff9e;border-radius:50%;z-index:2}
+.f-arm{position:absolute;top:40%;width:20%;height:12%;border-top:8px solid #b6ff4a;border-radius:50%;z-index:2}.f-arm.left{left:-2%;transform:rotate(-15deg)}.f-arm.right{right:-2%;transform:rotate(15deg)}
+.f-chip{position:absolute;padding:11px 15px;border-radius:12px;border:1px solid #ffffff24;background:#11111dcc;backdrop-filter:blur(14px);font-size:11px;color:#ddd;box-shadow:0 12px 35px #0008;animation:chipfloat 4s ease-in-out infinite}
+.f-chip b{color:var(--felix-green)}.f-chip.c1{top:13%;right:0}.f-chip.c2{bottom:14%;left:0;animation-delay:-1.7s}.f-chip.c3{bottom:7%;right:7%;animation-delay:-2.5s}
+@keyframes chipfloat{50%{transform:translateY(-10px) rotate(2deg)}}
+.f-section{max-width:1240px;margin:auto;padding:100px 28px}
+.f-section-head{text-align:center;margin-bottom:48px}.f-kicker{font-size:10px;letter-spacing:3px;color:var(--felix-green);text-transform:uppercase}.f-section h2{font-size:clamp(34px,5vw,58px);letter-spacing:-2px;margin:13px 0}.f-section-head p{color:#9694aa;max-width:600px;margin:auto;line-height:1.7}
+.f-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.f-card{padding:28px;border-radius:22px;border:1px solid #ffffff14;background:linear-gradient(145deg,#171729dd,#0d0d18dd);min-height:220px;position:relative;overflow:hidden;transition:transform .3s,border-color .3s,box-shadow .3s;transform-style:preserve-3d}
+.f-card:before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;background:var(--glow,#9b5cff);filter:blur(75px);opacity:.13;right:-80px;top:-80px;transition:.4s}
+.f-card:hover{border-color:#b6ff4a66;box-shadow:0 20px 60px #0006}.f-card:hover:before{opacity:.35}
+.f-icon{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,#b6ff4a22,#9b5cff33);border:1px solid #ffffff20;font-size:22px;margin-bottom:22px}
+.f-card h3{margin:0 0 10px;font-size:18px}.f-card p{color:#9694aa;line-height:1.7;font-size:13px;margin:0}
+.f-showcase{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch}
+.f-showcase .f-card{min-height:310px}.f-demo{height:150px;margin-top:22px;border-radius:13px;background:linear-gradient(130deg,#b6ff4a1c,#9b5cff24);border:1px solid #ffffff15;display:flex;align-items:center;justify-content:center;gap:8px;overflow:hidden}
+.f-demo span{height:70%;width:13%;border-radius:8px;background:linear-gradient(180deg,var(--felix-green),#9b5cff);animation:bars 1.2s ease-in-out infinite alternate}.f-demo span:nth-child(2){animation-delay:.2s}.f-demo span:nth-child(3){animation-delay:.4s}.f-demo span:nth-child(4){animation-delay:.6s}.f-demo span:nth-child(5){animation-delay:.8s}
+@keyframes bars{to{height:25%;filter:hue-rotate(50deg)}}
+.f-cta{max-width:1184px;margin:40px auto 100px;padding:58px 30px;border:1px solid #b6ff4a40;border-radius:28px;text-align:center;background:radial-gradient(500px circle at 20% 0,#b6ff4a18,transparent),radial-gradient(500px circle at 90% 100%,#9b5cff22,transparent),#11111c}
+.f-cta h2{font-size:clamp(32px,5vw,54px);margin:0 0 14px;letter-spacing:-2px}.f-cta p{color:#a6a3b7;margin:0 auto 25px;max-width:540px;line-height:1.7}
+.f-footer{border-top:1px solid #ffffff12;padding:28px;text-align:center;color:#77758d;font-size:11px;letter-spacing:1px}
+.f-reveal{opacity:0;transform:translateY(35px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}.f-reveal.visible{opacity:1;transform:translateY(0)}
+.f-cursor{position:fixed;z-index:20;pointer-events:none;left:0;top:0;width:28px;height:28px;border:1px solid #b6ff4a99;border-radius:50%;transform:translate(-50%,-50%);mix-blend-mode:screen;transition:width .2s,height .2s,background .2s;box-shadow:0 0 20px #b6ff4a55}
+.f-cursor-glow{position:fixed;z-index:-1;pointer-events:none;width:260px;height:260px;left:0;top:0;border-radius:50%;background:radial-gradient(circle,#9b5cff19,transparent 68%);transform:translate(-50%,-50%)}
+.f-modal{position:fixed;inset:0;z-index:30;background:#05050bdc;backdrop-filter:blur(14px);display:none;align-items:center;justify-content:center;padding:20px}.f-modal.open{display:flex}
+.f-modalbox{width:min(100%,430px);padding:32px;border:1px solid #b6ff4a55;border-radius:23px;background:#11111e;box-shadow:0 25px 90px #000b;animation:modalpop .35s cubic-bezier(.2,.8,.2,1)}
+@keyframes modalpop{from{opacity:0;transform:scale(.92) translateY(20px)}to{opacity:1;transform:none}}
+.f-modalbox h3{font-size:27px;margin:0 0 7px}.f-modalbox p{color:#9997ad;font-size:13px;line-height:1.6;margin:0 0 20px}
+.f-modalbox label{display:block;font-size:11px;color:#c9c5dc;margin:13px 0 6px}.f-modalbox input{width:100%;padding:13px 14px;border:1px solid #ffffff20;border-radius:10px;background:#090912;color:white;outline:none}.f-modalbox input:focus{border-color:var(--felix-green);box-shadow:0 0 0 3px #b6ff4a16}
+.f-modalbox .f-btn{width:100%;margin-top:18px}.f-close{float:right;border:0;background:none;color:#aaa;font-size:22px;cursor:pointer}
+.f-note{font-size:10px!important;color:#77758d!important;margin-top:14px!important}
+@media(max-width:850px){.f-navlinks{display:none}.f-hero{grid-template-columns:1fr;padding-top:65px;text-align:center}.f-lead{margin:auto}.f-herocta,.f-stats{justify-content:center}.f-visual{height:400px}.f-orbit{width:340px}.f-orbit.o2{width:275px}.f-cards{grid-template-columns:1fr 1fr}.f-showcase{grid-template-columns:1fr}}
+@media(max-width:560px){.f-nav{padding:0 17px;height:70px}.f-actions{gap:6px}.f-btn{padding:10px 13px}.f-hero{padding:55px 18px 30px}.f-hero h1{letter-spacing:-4px;font-size:58px}.f-lead{font-size:14px}.f-stats{gap:17px}.f-stat strong{font-size:19px}.f-visual{height:320px}.f-orbit{width:270px}.f-orbit.o2{width:220px}.f-chip{font-size:9px;padding:8px}.f-section{padding:65px 18px}.f-cards{grid-template-columns:1fr}.f-cta{margin:20px 16px 65px;padding:42px 20px}.f-cursor,.f-cursor-glow{display:none}}
+
+
+/* ===== RESPONSIVO ===== */
+html{-webkit-text-size-adjust:100%}#portfolio{overflow-x:hidden}.f-hero{overflow-x:clip}.f-burger{display:none;padding:10px 14px}
+#felixEditorShell{display:none;position:fixed;inset:0;z-index:99999;background:#070711}#felixEditorFrame{display:block;width:100%;height:100%;border:0;background:#070711}
+.f-modalbox{max-height:calc(100dvh - 40px);overflow:auto}
+@media(max-width:850px){.f-burger{display:block}.f-navlinks.open{display:flex!important;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;gap:16px;padding:20px 24px;background:#0b0b18f5;border-bottom:1px solid #ffffff18}.f-orbit{width:min(340px,86vw)}.f-orbit.o2{width:min(275px,70vw)}.f-stats{flex-wrap:wrap}.f-hero h1{letter-spacing:-4px}}
+@media(max-width:560px){.f-brand small{display:none}.f-actions .f-btn:first-child{display:none}.f-hero h1{font-size:clamp(38px,13vw,58px);letter-spacing:-3px}.f-chip.c3{display:none}.f-orbit{width:min(270px,76vw)}.f-orbit.o2{width:min(220px,62vw)}.f-modalbox{padding:24px 20px}.f-herocta .f-btn{flex:1 1 100%}.f-section-head h2{letter-spacing:-1px}}
+@media(max-width:380px){.f-nav{padding:0 12px}.f-brand{font-size:18px}.f-hero h1{letter-spacing:-2px}}
+@media(pointer:coarse){.f-cursor,.f-cursor-glow{display:none}}

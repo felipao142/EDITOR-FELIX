@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FELIX — Creative Video Editor</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="portfolio">
+  <div class="f-cursor" id="fCursor"></div><div class="f-cursor-glow" id="fGlow"></div>
+  <nav class="f-nav">
+    <div class="f-brand">FELIX<span>.</span><small>CREATIVE VIDEO EDITOR</small></div>
+    <div class="f-navlinks"><a href="#f-home">Início</a><a href="#f-tools">Recursos</a><a href="#f-about">Sobre o editor</a></div>
+    <div class="f-actions"><button class="f-btn" onclick="fOpenSignup()">Cadastrar-se</button><button class="f-btn primary" onclick="fEnter()">Entrar ↗</button><button class="f-btn f-burger" aria-label="Menu" onclick="document.querySelector('.f-navlinks').classList.toggle('open')">☰</button></div>
+  </nav>
+  <main>
+    <section class="f-hero" id="f-home">
+      <div class="f-copy">
+        <div class="f-eyebrow"><span class="f-dot"></span> SUA CRIATIVIDADE, SEM LIMITES</div>
+        <h1>IDEIAS<br>EM <span class="grad">MOVIMENTO.</span></h1>
+        <p class="f-lead">Conheça o Felix: um espaço criativo para transformar vídeos, imagens e sons em histórias com personalidade. Edite, experimente e dê vida à sua próxima ideia.</p>
+        <div class="f-herocta"><button class="f-btn primary" onclick="fEnter()">ENTRAR NO EDITOR&nbsp; ↗</button><button class="f-btn" onclick="fOpenSignup()">CRIAR MINHA CONTA</button></div>
+        <div class="f-stats"><div class="f-stat"><strong>01</strong><span>Seu espaço criativo</span></div><div class="f-stat"><strong>∞</strong><span>Possibilidades</span></div><div class="f-stat"><strong>100%</strong><span>Ideias em movimento</span></div></div>
+      </div>
+      <div class="f-visual" id="fVisual">
+        <div class="f-orbit"></div><div class="f-orbit o2"></div>
+        <div class="f-glass" id="fGlass"><div class="f-arm left"></div><div class="f-arm right"></div><div class="f-lens"></div><div class="f-bridge"></div></div>
+        <div class="f-chip c1"><b>✦ FELIX STUDIO</b><br>Creative mode: ON</div>
+        <div class="f-chip c2">◉ <b>LIVE PREVIEW</b><br>Seu próximo projeto começa aqui</div>
+        <div class="f-chip c3">✧ GREEN × PURPLE</div>
+      </div>
+    </section>
+    <section class="f-section" id="f-tools">
+      <div class="f-section-head f-reveal"><div class="f-kicker">FERRAMENTAS CRIATIVAS</div><h2>Seu estúdio. Suas regras.</h2><p>Um conjunto de ferramentas para explorar ideias, experimentar estilos e construir projetos audiovisuais em um só lugar.</p></div>
+      <div class="f-cards">
+        <article class="f-card f-reveal" style="--glow:#b6ff4a"><div class="f-icon">✂</div><h3>Edição de vídeo</h3><p>Organize clipes, corte cenas, ajuste a duração e monte sua narrativa na linha do tempo.</p></article>
+        <article class="f-card f-reveal" style="--glow:#9b5cff"><div class="f-icon">✦</div><h3>Efeitos & transições</h3><p>Explore filtros, movimentos e transições para dar ritmo e identidade aos seus vídeos.</p></article>
+        <article class="f-card f-reveal" style="--glow:#b6ff4a"><div class="f-icon">T</div><h3>Textos & legendas</h3><p>Adicione títulos, legendas e elementos tipográficos para contar sua história.</p></article>
+      </div>
+    </section>
+    <section class="f-section" id="f-about">
+      <div class="f-section-head f-reveal"><div class="f-kicker">POR DENTRO DO FELIX</div><h2>Crie do seu jeito.</h2><p>Do primeiro corte à exportação, tenha liberdade para ajustar cada detalhe do seu projeto.</p></div>
+      <div class="f-showcase">
+        <article class="f-card f-reveal"><div class="f-icon">▤</div><h3>Timeline intuitiva</h3><p>Trabalhe com trilhas de vídeo, áudio e texto. Organize seus elementos e construa cada cena com precisão.</p><div class="f-demo"><span></span><span></span><span></span><span></span><span></span></div></article>
+        <article class="f-card f-reveal"><div class="f-icon">◈</div><h3>Imagem em destaque</h3><p>Ajuste cores, aplique filtros, faça recortes e experimente recursos de edição de imagem.</p><div class="f-demo"><span style="height:45%;background:linear-gradient(#9b5cff,#b6ff4a)"></span><span style="height:90%"></span><span style="height:55%;background:linear-gradient(#b6ff4a,#9b5cff)"></span><span style="height:80%"></span><span style="height:35%"></span></div></article>
+      </div>
+    </section>
+    <section class="f-cta f-reveal"><div class="f-kicker">PRONTO PARA COMEÇAR?</div><h2>Seu próximo projeto<br><span style="background:linear-gradient(90deg,#b6ff4a,#9b5cff);-webkit-background-clip:text;color:transparent">começa agora.</span></h2><p>Entre no Felix e transforme suas ideias em criações.</p><button class="f-btn primary" onclick="fEnter()">ENTRAR NO FELIX&nbsp; ↗</button></section>
+  </main>
+  <footer class="f-footer">FELIX CREATIVE VIDEO EDITOR · TX_EDITION · CRIATIVIDADE EM MOVIMENTO</footer>
+  <div class="f-modal" id="fSignup" onclick="if(event.target===this)fCloseSignup()"><div class="f-modalbox"><button class="f-close" onclick="fCloseSignup()">×</button><div class="f-kicker">BEM-VINDO AO FELIX</div><h3>Crie sua conta.</h3><p>Prepare seu espaço criativo para começar a editar.</p><form onsubmit="fSignupSubmit(event)"><label for="fName">Nome</label><input id="fName" required placeholder="Como podemos chamar você?"><label for="fEmail">E-mail</label><input id="fEmail" type="email" required placeholder="voce@email.com"><label for="fPass">Senha</label><input id="fPass" type="password" minlength="6" required placeholder="Mínimo de 6 caracteres"><button class="f-btn primary" type="submit">CADASTRAR-SE ↗</button></form><p class="f-note">Protótipo visual: o cadastro ainda não cria uma conta real. É necessária integração com um serviço de autenticação para ativar o acesso seguro.</p></div></div>
+</div>
+
+
+<div id="felixEditorShell"><iframe id="felixEditorFrame" src="editor.html" title="Editor de vídeo FELIX" allow="fullscreen; microphone"></iframe></div>
+<script src="main.js"></script>
+</body>
+</html>
